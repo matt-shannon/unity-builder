@@ -36,7 +36,7 @@ class Docker {
             --volume "${githubWorkflow}":"/github/workflow:z" \
             --volume "${workspace}":"/github/workspace:z" \
             --volume "${actionFolder}/default-build-script:/UnityBuilderAction:z" \
-            --volume "${actionFolder}/platforms/ubuntu/steps:/steps:z" \
+            --volume "${actionFolder}/platforms/ubuntu/steps:/steps42:z" \
             --volume "${actionFolder}/platforms/ubuntu/entrypoint.sh:/entrypoint.sh:z" \
             ${sshAgent ? `--volume ${sshAgent}:/ssh-agent` : ''} \
             ${sshAgent ? '--volume /home/runner/.ssh:/root/.ssh:ro' : ''} \
