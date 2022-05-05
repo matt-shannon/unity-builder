@@ -10,6 +10,9 @@ mkdir -p "$ACTIVATE_LICENSE_PATH"
 #
 # Run steps
 #
+eval $(ssh-agent)
+ssh-add
+
 source /steps/set_gitcredential.sh
 source /steps/activate.sh
 source /steps/build.sh

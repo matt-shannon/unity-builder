@@ -39,7 +39,7 @@ class Docker {
             --volume "${actionFolder}/platforms/ubuntu/steps:/steps:z" \
             --volume "${actionFolder}/platforms/ubuntu/entrypoint.sh:/entrypoint.sh:z" \
             ${sshAgent ? `--volume ${sshAgent}:/ssh-agent` : ''} \
-            ${sshAgent ? '--volume /home/runner/.ssh/known_hosts:/root/.ssh/known_hosts:ro' : ''} \
+            ${sshAgent ? '--volume /home/runner/.ssh:/root/.ssh:ro' : ''} \
             ${image} \
             /bin/bash -c /entrypoint.sh`;
   }
