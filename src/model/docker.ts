@@ -27,6 +27,7 @@ class Docker {
     return `docker run \
             --workdir /github/workspace \
             --rm \
+            --memory-swap -1 \
             ${ImageEnvironmentFactory.getEnvVarString(parameters)} \
             --env UNITY_SERIAL \
             --env GITHUB_WORKSPACE=/github/workspace \
